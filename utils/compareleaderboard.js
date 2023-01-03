@@ -17,8 +17,8 @@ function detectChange(oldArray, newArray) {
       const newPlayer = newArray[i];
   
       if (oldPlayer.name !== newPlayer.name) {
-        const oldPerformance = Number(oldPlayer.performance);
-        const newPerformance = Number(newPlayer.performance, 10);
+        const oldPerformance = Number(oldPlayer.performance.replaceAll(',', ''));
+        const newPerformance = Number(newPlayer.performance.replaceAll(',', ''));
         console.log(oldPerformance)
         console.log(newPerformance)
 
