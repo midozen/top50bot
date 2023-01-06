@@ -19,8 +19,6 @@ function detectChange(oldArray, newArray) {
       if (oldPlayer.name !== newPlayer.name) {
         const oldPerformance = Number(oldPlayer.performance.replaceAll(',', ''));
         const newPerformance = Number(newPlayer.performance.replaceAll(',', ''));
-        console.log(oldPerformance)
-        console.log(newPerformance)
 
         const oldRank = oldArray.findIndex(p => p.name === newPlayer.name) + 1;
         const newRank = i + 1;
@@ -28,11 +26,7 @@ function detectChange(oldArray, newArray) {
       }
     }
   
-    if (result.length === 1) {
-      return false;
-    } else {
-      return result.join('\n');
-    }
+    return result.length === 1 ? false : result.join("\n");
 }
 
 module.exports = detectChange;
