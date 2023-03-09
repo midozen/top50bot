@@ -1,6 +1,6 @@
 const twit = require('twit');
 
-const getLeaderboard = require('./utils/getleaderboard');
+const {getToken, getRankings} = require('./utils/osu');
 const compareLeaderboard = require('./utils/compareleaderboard');
 
 const config = require('./config.json');
@@ -11,10 +11,12 @@ let oldLeaderboard = [];
 
 async function loop() {
   if (oldLeaderboard.length === 0) {
-    oldLeaderboard = await getLeaderboard();
+    const token = await getToken();
+    oldLeaderboard = await getRankings(token);
   }
 
-  const temp = await getLeaderboard();
+  const token = await getToken();
+  const temp = await getRankings(token);
 
   const changes = compareLeaderboard(oldLeaderboard, temp);
 
@@ -27,14 +29,16 @@ async function loop() {
       status: changes
     }
 
-    //tweet and check for error
-    T.post('statuses/update', tweet, (err, data, response) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('Tweeted: ' + changes);
-      }
-    })
+    // //tweet and check for error
+    // T.post('statuses/update', tweet, (err, data, response) => {
+    //   if (err) {
+    //     console.log(err);
+    //   } else {
+    //     console.log('Tweeted: ' + changes);
+    //   }
+    // })
+
+    console.log(changes)
 
     oldLeaderboard = temp;
   } else {

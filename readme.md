@@ -14,6 +14,10 @@ This is a twitter bot for osu! that checks the [ranked leaderboard](https://osu.
         "consumer_secret": "YOUR_CONSUMER_SECRET",
         "access_token": "YOUR_ACCESS_TOKEN",
         "access_token_secret": "YOUR_ACCESS_TOKEN_SECRET"
+    },
+    "osu" : {
+        "client_id": "YOUR_CLIENT_ID",
+        "client_secret": "YOUR_CLIENT_SECRET"
     }
 }
 ```
