@@ -29,16 +29,16 @@ async function loop() {
       status: changes
     }
 
-    // //tweet and check for error
-    // T.post('statuses/update', tweet, (err, data, response) => {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     console.log('Tweeted: ' + changes);
-    //   }
-    // })
+    // tweet and check for error
+    T.post('statuses/update', tweet, (err, data, response) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Tweeted: ' + changes);
+      }
+    })
 
-    console.log(changes)
+    // console.log(changes)
 
     oldLeaderboard = temp;
   } else {
