@@ -9,6 +9,7 @@ This is a twitter bot for osu! that checks the [ranked leaderboard](https://osu.
 - make a new file called `config.json` and set-up like this
 ```
 {
+    "debug": false,
     "twitter" : {
         "consumer_key": YOUR_CONSUMER_KEY",
         "consumer_secret": "YOUR_CONSUMER_SECRET",
