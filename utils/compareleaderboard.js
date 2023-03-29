@@ -24,7 +24,7 @@ function detectChange(oldArray, newArray) {
       const oldRank = oldArray.findIndex(player => player.user.username === newPlayer.user.username) + 1;
       const newRank = i + 1;
 
-      result.push(`${newPlayer.user.username} has now changed from rank #${oldRank} to #${newRank}. ${oldRank > newRank ? `Gain of ${newPerformance - oldPerformance} PP` : ''}`);
+      result.push(`${newPlayer.user.username} has now changed from rank #${oldRank} to #${newRank}. ${oldRank > newRank ? `Gain of ${Math.round(newPerformance - oldPerformance)} PP` : ''}`);
     }
   }
 
