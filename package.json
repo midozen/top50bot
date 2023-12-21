@@ -12,8 +12,11 @@
   "dependencies": {
     "axios": "^1.2.2",
     "cheerio": "^1.0.0-rc.12",
+    "i": "^0.3.7",
+    "npm": "^10.2.5",
     "querystring": "^0.2.1",
-    "twit": "^2.2.11"
+    "twit": "^2.2.11",
+    "twitter-api-v2": "^1.15.2"
   },
   "engines": {
     "node": "18.x"
