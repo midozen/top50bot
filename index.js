@@ -1,4 +1,3 @@
-const twit = require('twit');
 
 const { getToken, getRankings } = require('./utils/osu');
 const compareLeaderboard = require('./utils/compareleaderboard');
@@ -6,7 +5,9 @@ const logData = require('./utils/logdata');
 
 const config = require('./config.json');
 
-const T = new twit(config.twitter);
+const { TwitterApi } = require('twitter-api-v2');
+
+const client = new TwitterApi(config.twitter);
 
 let oldLeaderboard = [];
 
@@ -34,18 +35,7 @@ async function loop() {
       logData(oldLeaderboard, temp);
     }
     else {
-      const tweet = {
-        status: changes
-      }
-
-      // tweet and check for error
-      T.post('statuses/update', tweet, (err, data, response) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log('Tweeted: ' + changes);
-        }
-      });
+      await client.v2.tweet(changes)
     }
 
     oldLeaderboard = temp;
