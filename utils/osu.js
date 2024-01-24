@@ -23,7 +23,7 @@ const getToken = async () => {
         return data.access_token;
     }
     catch (error) {
-        console.error(error.response.data);
+        console.error(error.response);
         return false;
     }
 }
