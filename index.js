@@ -45,4 +45,4 @@ async function loop() {
   }
 }
 
-setInterval(loop, 1000 * 1);
+setInterval(loop, 1000 * 3);
