@@ -1,3 +1,5 @@
+# THIS PROJECT IS NOW DEPRECATED!!! LOOK OUT FOR A REWRITE OF THIS CODEBASE
+
 # Osu Top 50 Twitter Bot
 
 ## What is this?
